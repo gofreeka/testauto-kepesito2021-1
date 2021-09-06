@@ -13,6 +13,10 @@ URL = "https://ambitious-sky-0d3acbd03.azurestaticapps.net/k4.html"
 driver.get(URL)
 time.sleep(2)
 
+test_data_01 = ['']
+
+# Elements
+p1 = driver.find_element_by_xpath('/html/body/div/div/p[3]/text()')
 
 # * Helyesen betöltődik az applikáció:
 #     * Megjelenik az ABCs műveleti tábla, pontosan ezzel a szöveggel:
@@ -20,7 +24,7 @@ time.sleep(2)
 
 
 def test_tc01():
-    pass
+    assert p1.text == test_data_01[0]
 
 
 # * Megjelenik egy érvényes művelet:

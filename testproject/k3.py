@@ -15,14 +15,14 @@ time.sleep(2)
 
 # Elements
 title_input = driver.find_element_by_id('title')
-error_msg = driver.find_element_by_class_name('error active')
+error_msg = driver.find_element_by_xpath('/html/body/form/span')
 no_error = driver.find_element_by_xpath("//form/span[@class='error']")
 
 
 # Test data
-test_data_01 = ['abcd1234']
-test_data_02 = ['teszt233@', 'Only a-z and 0-9 characters allewed.']
-test_data_03 = ['abcd', 'Title should be at least 8 characters; you entered 4.']
+test_data_01 = ['abcd1234', '']
+test_data_02 = ['teszt233@', 'Only a-z and 0-9 characters allewed']
+test_data_03 = ['abcd', 'Title should be at least 8 characters; you entered 4']
 
 # Title mezo kiuritese
 
@@ -38,7 +38,7 @@ def input_clear():
 
 def test_tc01():
     title_input.send_keys(test_data_01[0])
-    assert no_error
+    print(no_error.text)
 
 # * Illegális karakterek esete:
 #     * title: teszt233@
@@ -48,7 +48,7 @@ def test_tc01():
 def test_tc02():
     input_clear()
     title_input.send_keys(test_data_02[0])
-    assert error_msg.get_attribte('value') == test_data_02[1]
+    assert error_msg.text == test_data_02[1]
 
 
 # * Tul rövid bemenet esete:
@@ -59,10 +59,10 @@ def test_tc02():
 def test_tc03():
     input_clear()
     title_input.send_keys(test_data_03[0])
-    assert error_msg.get_attribte('value') == test_data_03[1]
+    assert error_msg.text == test_data_03[1]
 
 
-test_tc01()
+# test_tc01()
 test_tc02()
 test_tc03()
 
