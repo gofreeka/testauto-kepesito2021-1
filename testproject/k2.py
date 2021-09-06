@@ -36,7 +36,6 @@ test_data_tc03 = ['Incorrect!', 'Correct!']
 
 def test_tc01():
     assert random_color_name.text != test_data_tc01[0]
-    # driver.find_element_by_xpath("//button[normalize-space()='Sign in']")
 
 
 # * El lehet indítani a játékot a `start` gommbal.
