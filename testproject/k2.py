@@ -56,18 +56,17 @@ def test_tc02():
 
 
 def test_tc03():
-    pass
-    # bt_start.click()
-    # time.sleep(2)
-    # if result.text == test_data_tc03[0]:
-    #     print(result.text)
-    # else:
-    #     bt_stop.click()
-    #     print(result.text)
+    bt_start.click()
+    time.sleep(2)
+    if result.text == test_data_tc03[0]:
+        print(result.text)
+    else:
+        bt_stop.click()
+        print(result.text)
 
 
-test_tc01()
-test_tc02()
-test_tc03()
+# test_tc01()
+# test_tc02()
+# test_tc03()
 
 # driver.close()
