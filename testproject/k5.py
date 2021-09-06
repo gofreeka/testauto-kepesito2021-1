@@ -13,6 +13,8 @@ URL = "https://ambitious-sky-0d3acbd03.azurestaticapps.net/k5.html"
 driver.get(URL)
 time.sleep(2)
 
+play_bt = driver.find_element_by_id('spin')
+init_bt = driver.find_element_by_id('init')
 
 # * Az applikáció helyesen megjelenik:
 #     * A bingo tábla 25 darab cellát tartalmaz
@@ -29,7 +31,7 @@ def test_tc01():
 
 
 def test_tc02():
-    pass
+    play_bt.click()
 
 
 # * Új játékot tudunk indítani
@@ -37,4 +39,11 @@ def test_tc02():
 #     * új bingo szelvényt kapunk más számokkal.
 
 def test_tc03():
-    pass
+    init_bt.click()
+
+
+test_tc01()
+test_tc02()
+test_tc03()
+
+# driver.close()
