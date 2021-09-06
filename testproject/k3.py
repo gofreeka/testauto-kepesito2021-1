@@ -22,7 +22,7 @@ no_error = driver.find_element_by_xpath("//form/span[@class='error']")
 # Test data
 test_data_01 = ['abcd1234', '']
 test_data_02 = ['teszt233@', 'Only a-z and 0-9 characters allewed']
-test_data_03 = ['abcd', 'Title should be at least 8 characters; you entered 4']
+test_data_03 = ['abcd', 'Title should be at least 8 characters; you entered 4.']
 
 # Title mezo kiuritese
 
@@ -62,7 +62,7 @@ def test_tc03():
     assert error_msg.text == test_data_03[1]
 
 
-# test_tc01()
+test_tc01()
 test_tc02()
 test_tc03()
 
